@@ -4,7 +4,7 @@ import cv2
 import tqdm
 import matplotlib.pyplot as plt
 
-from thermal.sgbm import StereoBlockMatching
+from model.sgbm import StereoBlockMatching
 from data.kitti_dataloader import get_kitti_files, preprocess_data
 
 

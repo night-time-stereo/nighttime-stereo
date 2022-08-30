@@ -1,6 +1,6 @@
 import torch.nn as nn
 
-class ThermalDepthModel:
+class DepthModel:
     def __init__(self) -> None:
         pass
 
