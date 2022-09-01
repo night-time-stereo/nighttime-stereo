@@ -13,7 +13,7 @@ kitti_dl = get_kitti_files(KITTI_DIR)
 metrics = {'Bad-1 %': BadX(1.), 'Bad-4 %': BadX(4.), 'Rmse': Rmse()}
 
 method = "hsm"
-dataset = ""
+dataset = "kitti"
 predicted_dir = f'outputs/{method}/{dataset}'
 verbose = False
 
