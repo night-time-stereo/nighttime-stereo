@@ -26,7 +26,7 @@ class Rmse(Metric):
 
     def update(self, preds: torch.Tensor, target: torch.Tensor):
         assert preds.shape == target.shape
-        mask = target > 0
+        mask = (target > 0)
         self.errors += torch.sum(((preds - target) ** 2) * mask)
         self.total += mask.sum()
 
