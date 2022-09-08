@@ -7,9 +7,8 @@ import torch
 
 from data.kitti_dataloader import get_kitti_files, preprocess_data
 from metrics.kitti_metrics import BadX, Rmse
+from config import *
 
-
-KITTI_DIR = "/mnt/aidtr/external/kitti/stereo_flow_sceneflow_2015/training/"
 kitti_dl = get_kitti_files(KITTI_DIR)
 metrics = {'Bad-1 %': BadX(1.), 'Bad-4 %': BadX(4.), 'Rmse': Rmse()}
 
