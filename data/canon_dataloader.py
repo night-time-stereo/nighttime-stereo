@@ -9,16 +9,9 @@ from data.dataloader import DepthEstimationDataLoader
 
 
 class CanonDataloader(DepthEstimationDataLoader):
-    def __init__(self):
-        self.filepath = CANON_DIR
-        self.dataset = self._load_dataset()
-
-    def __len__(self):
-        return len(self.dataset)
-
-    def __getitem__(self, i):
-        left, right = self.dataset[i]
-        return self._preprocess(left, right)
+    def __init__(self, mode):
+        self.filepath = CANON_DARK_DIR if mode == "dark" else CANON_LIGHT_DIR
+        super().__init__(self._load_dataset())
 
     def _load_dataset(self):
         outputs = []

@@ -11,14 +11,7 @@ from data.dataloader import DepthEstimationDataLoader
 class KittiDataloader(DepthEstimationDataLoader):
     def __init__(self):
         self.filepath = KITTI_DIR
-        self.dataset = self._load_dataset()
-
-    def __len__(self):
-        return len(self.dataset)
-
-    def __getitem__(self, i):
-        left, right, depth = self.dataset[i]
-        return self._preprocess(left, right, depth)
+        super().__init__(self._load_dataset())
 
     def _load_dataset(self):
         outputs = []

@@ -11,14 +11,7 @@ from data.dataloader import DepthEstimationDataLoader
 class ThermalDataloader(DepthEstimationDataLoader):
     def __init__(self):
         self.filepath = THERMAL_MONO_DIR
-        self.dataset = self._load_dataset()
-
-    def __len__(self):
-        return len(self.dataset)
-
-    def __getitem__(self, i):
-        rgb, thermal, gt = self.dataset[i]
-        return self._preprocess(rgb, thermal, gt)
+        super().__init__(self._load_dataset())
 
     def _load_dataset(self):
         outputs = []
